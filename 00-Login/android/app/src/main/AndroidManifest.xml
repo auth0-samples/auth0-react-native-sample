@@ -32,8 +32,8 @@
             <category android:name="android.intent.category.BROWSABLE" />
             <data
               android:host="{DOMAIN}"
-              android:pathPrefix="/android/com.auth0sample/callback"
-              android:scheme="com.auth0sample" />
+              android:pathPrefix="/android/${applicationId}/callback"
+              android:scheme="${applicationId}" />
         </intent-filter>
         </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />

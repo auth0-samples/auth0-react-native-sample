@@ -22,7 +22,7 @@ export default class Auth0Sample extends Component {
   _onLogin() {
     auth0
         .webAuth
-        .authorize({scope: 'openid email'})
+        .authorize({scope: 'openid email', audience: 'https://' + credentials.domain + '/userinfo'})
         .then(credentials =>
               Alert.alert(
                   'Success',

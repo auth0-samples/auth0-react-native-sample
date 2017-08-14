@@ -44,14 +44,12 @@ export default class Auth0Sample extends Component {
   };
 
   _onLogout = () => {
-    auth0.webAuth.clearSession({}, error => {
-      if (error) {
-        console.log('Could not clear user sessions');
-      } else {
-        console.log('User session cleared');
+    auth0.webAuth.clearSession({})
+      .then(success => {
+        console.log('Auth0 session cleared');
         this.setState({ accessToken: null });
-      }
-    });
+      })
+      .catch(error => console.log(error));
   };
 
   render() {

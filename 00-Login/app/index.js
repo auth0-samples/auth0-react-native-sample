@@ -9,6 +9,7 @@ import {
   Alert,
   AppRegistry,
   Button,
+  Platform,
   StyleSheet,
   Text,
   View
@@ -38,18 +39,21 @@ export default class Auth0Sample extends Component {
           { cancelable: false }
         );
         this.setState({ accessToken: credentials.accessToken });
-        f;
       })
       .catch(error => console.log(error));
   };
 
   _onLogout = () => {
-    auth0.webAuth.clearSession({})
-      .then(success => {
-        console.log('Auth0 session cleared');
-        this.setState({ accessToken: null });
-      })
-      .catch(error => console.log(error));
+    if (Platform.OS === 'android') {
+      this.setState({ accessToken: null });
+    } else {
+      auth0.webAuth
+        .clearSession({})
+        .then(success => {
+          this.setState({ accessToken: null });
+        })
+        .catch(error => console.log(error));
+    }
   };
 
   render() {

@@ -31,7 +31,7 @@
             <category android:name="android.intent.category.DEFAULT" />
             <category android:name="android.intent.category.BROWSABLE" />
             <data
-              android:host="{DOMAIN}"
+              android:host="fcauth.eu.auth0.com"
               android:pathPrefix="/android/com.auth0sample/callback"
               android:scheme="com.auth0sample" />
         </intent-filter>

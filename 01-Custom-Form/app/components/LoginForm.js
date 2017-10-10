@@ -10,13 +10,22 @@ import {
 export default class LoginForm extends Component {
     constructor(props) {
         super(props);
-        this.state = { username: null, password: null, usernameError: false, passwordError: false }
+        this.state = { username: "", password: "", usernameError: false, passwordError: false }
     }
 
     validateLogin = () => {
-        if (this.state.username === null || this.state.password === null) {
-            this.setState( {usernameError: true, passwordError: true})
-        } else {
+
+        usernameError = false
+        passwordError = false
+
+        if (!this.state.username.length) {
+            usernameError = true
+        }
+        if (!this.state.password.length) {
+            passwordError = true
+        }
+        this.setState({usernameError: usernameError, passwordError: passwordError})
+        if (usernameError === false && passwordError === false) {
             this.props.realmLogin(this.state.username, this.state.password)
         }
     }
@@ -67,10 +76,11 @@ const styles = StyleSheet.create({
     inputContainer: {
         flex: 3,
         flexDirection: 'column',
-        paddingHorizontal: 10
+        paddingLeft: 20,
+        paddingRight: 20
     },
     input: {
-        height: 40,
+        height: 50,
         backgroundColor: '#FFFFFF',
         marginBottom: 15,
         color: '#333333',
@@ -79,7 +89,7 @@ const styles = StyleSheet.create({
         borderWidth: 1.0
     },
     inputError: {
-        borderColor: '#eaeaea'
+        borderColor: '#ff0000'
     },
     buttonContainer: {
         flex: 1,

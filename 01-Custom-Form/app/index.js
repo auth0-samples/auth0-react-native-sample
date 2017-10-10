@@ -1,37 +1,33 @@
 /**
- * Auth0Sample 00-Login
+ * Auth0Sample 01-Custom-Form
  * https://github.com/auth0/react-native-auth0
  * @flow
  */
 
 import React, { Component } from 'react';
 import {
-  Alert,
-  AppRegistry,
-  Button,
-  Platform,
-  StyleSheet,
-  Text,
-  View
+  AppRegistry
 } from 'react-native';
-import Login from './components/Login'
+import HomeScreen from './screens/HomeScreen'
+import ProfileScreen from './screens/ProfileScreen'
+import { StackNavigator } from 'react-navigation';
+
+const Navigation = StackNavigator({
+  Home: { screen: HomeScreen },
+  Profile: { screen: ProfileScreen }
+});
 
 export default class Auth0Sample extends Component {
   constructor(props) {
     super(props);
+    this.state = { accessToken: null }
   }
 
   render() {
     return (
-      <Login />
+      <Navigation />
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  }
-});
 
 AppRegistry.registerComponent('Auth0Sample', () => Auth0Sample);

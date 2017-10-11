@@ -20,16 +20,16 @@ export default class Login extends Component {
         this.realmLogin = this.realmLogin.bind(this);
     }
 
-    onSuccess = (credentials) => {
+    onSuccess(credentials) {
         auth0.auth
-            .userInfo({token: credentials.accessToken})
+            .userInfo({ token: credentials.accessToken })
             .then(profile => {
-                this.props.onAuth(credentials, profile)
+                this.props.onAuth(credentials, profile);
             })
-            .catch( error => this.alertError(error.json.error_description));
+            .catch(error => this.alertError(error.json.error_description));
     }
 
-    alertError = (message) => {
+    alertError(message) {
         Alert.alert(
             'Error',
             message,
@@ -38,7 +38,7 @@ export default class Login extends Component {
         );
     }
 
-    realmLogin = (username, password) => {
+    realmLogin(username, password) {
         auth0.auth
             .passwordRealm({
                 username: username,
@@ -48,12 +48,12 @@ export default class Login extends Component {
                 audience: 'https://' + credentials.domain + '/userinfo'
             })
             .then(credentials => {
-                this.onSuccess(credentials)
+                this.onSuccess(credentials);
             })
-            .catch( error => this.alertError(error.json.error_description));
-    };
+            .catch(error => this.alertError(error.json.error_description));
+    }
 
-    webAuth = (connection) => {
+    webAuth(connection) {
         auth0.webAuth
             .authorize({
                 scope: 'openid profile email',
@@ -61,9 +61,9 @@ export default class Login extends Component {
                 audience: 'https://' + credentials.domain + '/userinfo'
             })
             .then(credentials => {
-                this.onSuccess(credentials)
+                this.onSuccess(credentials);
             })
-            .catch( error => this.alertError(error.error_description));
+            .catch(error => this.alertError(error.error_description));
     };
 
     render() {
@@ -111,13 +111,13 @@ const styles = StyleSheet.create({
         marginTop: 20,
         alignItems: 'center',
         backgroundColor: '#eeeeee',
-        justifyContent:'center',
+        justifyContent: 'center',
     },
     socialContainer: {
         flex: 2,
         flexDirection: 'column',
-        alignItems:'center',
-        justifyContent:'center',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     title: {
         marginTop: 10,

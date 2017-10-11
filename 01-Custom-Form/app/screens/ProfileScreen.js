@@ -24,6 +24,21 @@ export default class ProfileScreen extends React.Component {
     headerLeft: <Button title="Logout" onPress={() => navigation.navigate('Home')} />
   });
 
+  callAPI = () => {
+    // You need to set a working URL to your API server.
+    fetch("https://locahost/private/api", {
+      method: "GET",
+      headers: {
+        'Accept': 'application/json',
+        'Authorization': 'Bearer ' + this.credentials.accessToken
+      }
+    })
+      .then((response) => console.log(response.json()))
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   render() {
     return (
       <View style={styles.container}>
@@ -35,7 +50,11 @@ export default class ProfileScreen extends React.Component {
           source={{ uri: this.profile.picture }}
           style={{ width: 100, height: 100 }}
         />
-        <Text>{ JSON.stringify(this.profile, null, 2) }</Text>
+        <Button
+          onPress={() => this.callAPI()}
+          title="CALL API"
+        />
+        <Text>{JSON.stringify(this.profile, null, 2)}</Text>
       </View>
     );
   }

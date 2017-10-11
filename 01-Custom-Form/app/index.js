@@ -20,7 +20,6 @@ const Navigation = StackNavigator({
 export default class Auth0Sample extends Component {
   constructor(props) {
     super(props);
-    this.state = { accessToken: null }
   }
 
   render() {

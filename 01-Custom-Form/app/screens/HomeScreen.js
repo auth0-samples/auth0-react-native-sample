@@ -14,11 +14,13 @@ export default class HomeScreen extends React.Component {
     }
   
     static navigationOptions = {
-      title: 'Home'
+      title: 'Home',
+      headerLeft: false
     };
 
-    onAuth = (credentials) => {
-      this.setState({modalVisible: false}, () => this.props.navigation.navigate('Profile', {credentials: credentials}))
+    onAuth = (credentials, profile) => {
+      this.setState({modalVisible: false}, () => 
+      this.props.navigation.navigate('Profile', {credentials: credentials, profile: profile}) )
     };
 
     render() {
@@ -38,6 +40,8 @@ export default class HomeScreen extends React.Component {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff'
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'center'
     }
   });

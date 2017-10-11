@@ -10,7 +10,6 @@ import {
 } from 'react-native';
 import Auth0 from 'react-native-auth0';
 import LoginForm from './LoginForm';
-import store from 'react-native-simple-store';
 
 var credentials = require('../auth0-credentials');
 const auth0 = new Auth0(credentials);
@@ -18,8 +17,16 @@ const auth0 = new Auth0(credentials);
 export default class Login extends Component {
     constructor(props) {
         super(props);
-        this.webAuth = this.webAuth.bind(this);
         this.realmLogin = this.realmLogin.bind(this);
+    }
+
+    onSuccess = (credentials) => {
+        auth0.auth
+            .userInfo({token: credentials.accessToken})
+            .then(profile => {
+                this.props.onAuth(credentials, profile)
+            })
+            .catch( error => this.alertError(error.json.error_description));
     }
 
     alertError = (message) => {
@@ -41,7 +48,7 @@ export default class Login extends Component {
                 audience: 'https://' + credentials.domain + '/userinfo'
             })
             .then(credentials => {
-                this.props.onAuth(credentials)
+                this.onSuccess(credentials)
             })
             .catch( error => this.alertError(error.json.error_description));
     };
@@ -54,7 +61,7 @@ export default class Login extends Component {
                 audience: 'https://' + credentials.domain + '/userinfo'
             })
             .then(credentials => {
-                this.props.onAuth(credentials)
+                this.onSuccess(credentials)
             })
             .catch( error => this.alertError(error.error_description));
     };

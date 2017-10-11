@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {
+  Button,
+  Image,
   StyleSheet,
   Text,
   View
@@ -14,17 +16,26 @@ export default class ProfileScreen extends React.Component {
   constructor(props) {
     super(props);
     this.credentials = this.props.navigation.state.params.credentials;
+    this.profile = this.props.navigation.state.params.profile;
   }
 
-  static navigationOptions = {
-    title: 'Profile'
-  };
+  static navigationOptions = ({ navigation }) => ({
+    title: 'Profile',
+    headerLeft: <Button title="Logout" onPress={() => navigation.navigate('Home')} />
+  });
 
   render() {
-    const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
-        <Text>Profile</Text>
+        <Text
+          style={styles.header} >
+          Welcome {this.profile.name}
+        </Text>
+        <Image
+          source={{ uri: this.profile.picture }}
+          style={{ width: 100, height: 100 }}
+        />
+        <Text>{ JSON.stringify(this.profile, null, 2) }</Text>
       </View>
     );
   }
@@ -33,6 +44,12 @@ export default class ProfileScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  header: {
+    fontWeight: '300',
+    padding: 20
   }
 });

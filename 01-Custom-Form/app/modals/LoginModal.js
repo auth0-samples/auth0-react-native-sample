@@ -16,6 +16,7 @@ export default class LoginModal extends React.Component {
           animationType="slide"
           transparent={false}
           visible={this.props.modalVisible}
+          onRequestClose={() => console.log("Modal has been closed.")}
         >
           <Login onAuth={this.props.onAuth}/>
         </Modal>

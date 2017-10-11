@@ -23,15 +23,19 @@ export default class ProfileScreen extends React.Component {
     title: 'Profile',
     headerLeft: <Button title="Logout" onPress={() => navigation.navigate('Home')} />
   });
-
+  
   callAPI = () => {
     // You need to set a working URL to your API server.
     fetch("https://locahost/private/api", {
-      method: "GET",
+      method: "POST",
       headers: {
         'Accept': 'application/json',
+        'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + this.credentials.accessToken
-      }
+      },
+      body: JSON.stringify({
+        firstParam: 'yourValue',
+      })
     })
       .then((response) => console.log(response.json()))
       .catch((error) => {

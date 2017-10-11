@@ -1,6 +1,5 @@
-# Auth0 React Native Samples
+# Auth0 React Native Embedded Samples
 
 For more information:
 
-- [Auth0 React Native QuickStarts](https://auth0.com/docs/quickstart/native/react-native)
-- [React Native Auth0 SDK](https://github.com/auth0/react-native-auth0)
+- [Custom Login Form](./01-Custom-Form/README.md)

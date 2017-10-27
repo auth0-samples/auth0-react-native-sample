@@ -12,6 +12,11 @@ storage facilities. You might want to look at a module such as:
 
 The sample form is hardcoded with Facebook, Google social connections and a `Username-Password-Authentication` database connection. You will need to have these connections enabled in your [Auth0 Dashboard](https://manage.auth0.com/#/)
 
+### Important: Database Connection Authentication
+
+Since June 2017 new Clients no longer have the **Password Grant Type*** enabled by default.
+This sample demonstrates database connection authentication using `passwordRealm`, so you will need to enable the Password Grant Type, please follow [this guide](https://auth0.com/docs/clients/client-grant-types#how-to-edit-the-client-grant_types-property).
+
 ### Call API
 
 Sample code is provided in `app/screens/ProfileScreen.js` using the native [fetch](https://facebook.github.io/react-native/docs/network.html) component. You will need to change this value to a real URL for it to work.

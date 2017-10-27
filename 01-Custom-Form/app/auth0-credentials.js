@@ -1,4 +1,4 @@
 module.exports = {
     clientId: "{CLIENT_ID}",
-    domain: "{DOMAIN}"
+    domain: "{DOMAIN_ID}"
   };

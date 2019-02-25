@@ -1,14 +1,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.auth0sample"
+    package="com.auth0.samples"
     android:versionCode="1"
     android:versionName="1.0">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.INTERNAL_SYSTEM_WINDOW"/>
 
     <uses-sdk
         android:minSdkVersion="16"
-        android:targetSdkVersion="22" />
+        android:targetSdkVersion="23" />
 
     <application
       android:name=".MainApplication"
@@ -33,7 +34,7 @@
             <data
               android:host="{DOMAIN}"
               android:pathPrefix="/android/com.auth0sample/callback"
-              android:scheme="com.auth0sample" />
+              android:scheme="com.auth0.samples" />
         </intent-filter>
         </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />

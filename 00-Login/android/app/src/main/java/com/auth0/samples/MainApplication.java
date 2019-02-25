@@ -1,4 +1,4 @@
-package com.auth0sample;
+package com.auth0.samples;
 
 import android.app.Application;
 

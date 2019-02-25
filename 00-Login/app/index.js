@@ -87,4 +87,4 @@ const styles = StyleSheet.create({
   }
 });
 
-AppRegistry.registerComponent('Auth0Sample', () => Auth0Sample);
+AppRegistry.registerComponent('Auth0.Samples', () => Auth0Sample);

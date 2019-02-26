@@ -1,0 +1,98 @@
+version: 2
+jobs:
+  node_server:
+    working_directory: ~/auth0-android-sample
+    docker:
+      - image: circleci/node:8  
+    steps:
+      - checkout 
+      - run:
+          name: Setting up npm server
+          command: npm init -y
+  android_00:
+    working_directory: ~/auth0-android-sample/00-Login
+    docker:
+      - image: circleci/android:api-28-node
+    environment:
+      - JVM_OPTS: -Xmx3200m
+      - AUTH0_CONFIG: strings.xml
+      - BROWSERSTACK_CONFIG: scripts/browserstack.py
+    steps:
+      - checkout:
+          path: ~/auth0-android-sample
+      - restore_cache:
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+      - run:
+          name: Setup Auth0 environment
+          command: |
+            cd ~/auth0-android-sample/00-Login/app/src/main/res/values/ 
+            mv $AUTH0_CONFIG.example $AUTH0_CONFIG
+            sed -i 's/{CLIENT_ID}/'$AUTH0_CLIENT_ID'/g' $AUTH0_CONFIG
+            sed -i 's/{DOMAIN}/'$AUTH0_DOMAIN'/g' $AUTH0_CONFIG
+            echo -i $AUTH0_CONFIG
+      - run:
+          name: Chmod permissions 
+          command: sudo chmod +x ./gradlew     
+      - run:
+          name: Download Dependencies
+          command: ./gradlew androidDependencies 
+      - run:
+          name: Compile apk file
+          command: ./gradlew assembleDebug  
+      - run:
+          name : App upload and Set app id in environment variable.
+          command : |
+            cd 
+            APP_UPLOAD_RESPONSE=$(curl -u "$BS_USER:$BS_KEY" -X POST https://api-cloud.browserstack.com/app-automate/upload -F "file=@auth0-android-sample/00-Login/app/build/outputs/apk/debug/app-debug.apk" -F 'data={"custom_id": "Auth0"}')
+            APP_ID=$(echo $APP_UPLOAD_RESPONSE | jq -r ".app_url")
+            if [ $APP_ID != null ]; then
+              echo "Apk uploaded to BrowserStack with app id : ",$APP_ID;
+              echo "export BROWSERSTACK_APP_ID=$APP_ID" >> $BASH_ENV;
+              source $BASH_ENV;
+              echo "Setting value of BROWSERSTACK_APP_ID in environment variables to  ",$APP_ID;
+            else
+              UPLOAD_ERROR_MESSAGE=$(echo $APP_UPLOAD_RESPONSE | jq -r ".error")
+              echo "App upload failed, reason : ",$UPLOAD_ERROR_MESSAGE
+              exit 1; 
+            fi
+      - run:
+          name: Installing pip dependencies
+          command: npm i python3
+
+      - run: 
+          name: Cloning repo
+          command: git clone https://github.com/auth0-samples/mobile-quickstarts-tests scripts
+
+      - run:
+          name: Installing pip
+          command: sudo apt-get install python3-pip
+      - run:
+          name: Installing python dependencies
+          command: sudo pip3 install -r scripts/requirements.txt
+      - run:
+          name: Copying Browserstack credentials
+          command : |
+            mv $BROWSERSTACK_CONFIG.example $BROWSERSTACK_CONFIG
+            sed -i 's/{user_name}/'$BS_USER'/g' $BROWSERSTACK_CONFIG
+            sed -i 's/{access_key}/'$BS_KEY'/g' $BROWSERSTACK_CONFIG
+            echo -i $BROWSERSTACK_CONFIG  
+
+      - run:
+          name: Execute test
+          command: python3 -m pytest scripts/test_app_android.py
+      - save_cache:
+          paths:
+            - ./gradle
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+workflows:
+  version: 2
+  node_android:
+    jobs:
+      - node_server
+      - android_00:
+          context: Quickstart MOBILE Test
+          requires:
+            - node_server
+          
+
+

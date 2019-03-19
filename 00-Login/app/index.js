@@ -34,8 +34,10 @@ export default class Auth0Sample extends Component {
             .then(credentials => {
                 Alert.alert(
                     'Success',
-                    'AccessToken: ' + credentials.accessToken, [{ text: 'OK', 
-                    onPress: () => console.log('OK Pressed') }], { cancelable: false }
+                    'AccessToken: ' + credentials.accessToken, [{
+                        text: 'OK',
+                        onPress: () => console.log('OK Pressed')
+                    }], { cancelable: false }
                 );
                 this.setState({ accessToken: credentials.accessToken });
             })
@@ -57,14 +59,14 @@ export default class Auth0Sample extends Component {
 
     render() {
         let loggedIn = this.state.accessToken === null ? false : true;
-        return ( <View style = { styles.container } >
-            <Text style = { styles.header } > Auth0Sample - Login </Text>   
+        return ( 
+        <View style = { styles.container }>
+            <Text style = { styles.header }> Auth0Sample - Login </Text>    
             <Text>
-            You are { loggedIn ? '' : 'not ' }
-            logged in . </Text>   
-            <Button onPress = { loggedIn ? this._onLogout : this._onLogin }
-            title = { loggedIn ? 'Log Out' : 'Log In' }/>  
-            </View>
+                You are { loggedIn ? '' : 'not ' } logged in . </Text>    
+                <Button onPress = { loggedIn ? this._onLogout : this._onLogin }
+                title = { loggedIn ? 'Log Out' : 'Log In' }/>   
+        </View >
         );
     }
 }

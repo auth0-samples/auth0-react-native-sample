@@ -26,7 +26,7 @@
           <category android:name="android.intent.category.DEFAULT" />
           <category android:name="android.intent.category.BROWSABLE" />
           <data
-              android:host="myaunt.auth0.com"
+              android:host="{DOMAIN}"
               android:pathPrefix="/android/com.auth0samples/callback"
               android:scheme="com.auth0samples" />
         </intent-filter>

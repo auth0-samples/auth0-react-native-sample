@@ -1,6 +1,5 @@
-# Auth0 React Native Samples
+# Auth0 React Native Samples - Login
 
 For more information:
 
-- [Auth0 React Native QuickStarts](https://auth0.com/docs/quickstart/native/react-native)
-- [React Native Auth0 SDK](https://github.com/auth0/react-native-auth0)
+- [Login QuickStart](https://auth0.com/docs/quickstart/native/react-native/00-login)

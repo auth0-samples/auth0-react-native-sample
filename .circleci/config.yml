@@ -26,7 +26,7 @@ jobs:
       - run:
           name: Chmod permissions 
           command: |
-          cd /android
+          cd ~/auth0-react-native-sample/00-Login/android
           sudo chmod +x ./gradlew     
       - run:
           name: Download Dependencies

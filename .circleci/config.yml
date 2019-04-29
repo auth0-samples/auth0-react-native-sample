@@ -30,10 +30,14 @@ jobs:
             sudo chmod +x ./gradlew     
       - run:
           name: Download Dependencies
-          command: ./gradlew androidDependencies 
+          command: |
+            cd ~/auth0-react-native-sample/00-Login/android
+            ./gradlew androidDependencies 
       - run:
           name: Compile apk file
-          command: ./gradlew assembleDebug  
+          command: |
+            cd ~/auth0-react-native-sample/00-Login/android
+            ./gradlew assembleDebug  
 
 workflows:
   version: 2

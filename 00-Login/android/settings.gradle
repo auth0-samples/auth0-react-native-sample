@@ -1,4 +1,4 @@
-rootProject.name = 'Auth0Sample'
+rootProject.name = 'Auth0Samples'
 include ':react-native-auth0'
 project(':react-native-auth0').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-auth0/android')
 

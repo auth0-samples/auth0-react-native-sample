@@ -8,7 +8,7 @@ jobs:
       - checkout 
       - run:
           name: Setting up npm server
-          command: clear
+          command: echo 'hello world'
   android_00:
     working_directory: ~/auth0-react-native-sample/00-Login
     docker:

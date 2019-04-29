@@ -27,6 +27,11 @@ jobs:
             sed -i 's/{CLIENT_ID}/'$client_id'/g' $AUTH0_CONFIG
             sed -i 's/{DOMAIN}/'$Domain'/g' $AUTH0_CONFIG
             echo -i $AUTH0_CONFIG
+      - run:
+          name: Installing react dependencies
+          command: |
+            cd ~/auth0-react-native-sample/00-Login/
+            npm i
 workflows:
   version: 2
   node_android:

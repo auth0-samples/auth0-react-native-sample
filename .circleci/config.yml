@@ -23,6 +23,18 @@ jobs:
           command: |
             cd ~/auth0-react-native-sample/00-Login/
             npm i
+      - run:
+          name: Chmod permissions 
+          command: |
+          cd /android
+          sudo chmod +x ./gradlew     
+      - run:
+          name: Download Dependencies
+          command: ./gradlew androidDependencies 
+      - run:
+          name: Compile apk file
+          command: ./gradlew assembleDebug  
+
 workflows:
   version: 2
   node_android:

@@ -43,7 +43,6 @@ workflows:
   version: 2
   node_android:
     jobs:
-      - node_server
       - android_00:
           context: Quickstart MOBILE Test
 

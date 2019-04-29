@@ -1,0 +1,44 @@
+version: 2
+jobs:
+  node_server:
+    working_directory: ~/auth0-react-native-sample
+    docker:
+      - image: circleci/node:8  
+    steps:
+      - checkout 
+      - run:
+          name: Setting up npm server
+          command: npm init -y
+  android_00:
+    working_directory: ~/auth0-react-native-sample/00-Login
+    docker:
+      - image: circleci/android:api-28-node
+    environment:
+      - JVM_OPTS: -Xmx3200m
+      - AUTH0_CONFIG: auth0-credentials.js
+      - BROWSERSTACK_CONFIG: scripts/browserstack.py
+    steps:
+      - checkout:
+          path: ~/auth0-react-native-sample
+      - restore_cache:
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+      - run:
+          name: Setup Auth0 environment
+          command: |
+            cd ~/auth0-react-native-sample/00-Login/app/
+            mv $AUTH0_CONFIG $AUTH0_CONFIG
+            sed -i 's/{CLIENT_ID}/'$client_id'/g' $AUTH0_CONFIG
+            sed -i 's/{DOMAIN}/'$Domain'/g' $AUTH0_CONFIG
+            echo -i $AUTH0_CONFIG
+workflows:
+  version: 2
+  node_android:
+    jobs:
+      - node_server
+      - android_00:
+          context: Quickstart MOBILE Test
+          requires:
+            - node_server
+          
+
+

@@ -15,6 +15,7 @@ import {
     View
 } from 'react-native';
 import Auth0 from 'react-native-auth0';
+import { CustomTabs } from "react-native-custom-tabs";
 
 var credentials = require('./auth0-credentials');
 const auth0 = new Auth0(credentials);
@@ -47,6 +48,18 @@ export default class Auth0Sample extends Component {
     _onLogout = () => {
         if (Platform.OS === 'android') {
             this.setState({ accessToken: null });
+            let params = {
+                clientId: credentials.clientId,
+                returnTo: `com.auth0samples://${credentials.domain}/android/com.auth0samples/callback`
+            };
+            let logoutUrl = auth0.auth.logoutUrl(params);
+            CustomTabs.openURL(logoutUrl)
+                .then((launched) => {
+                    console.log(`Launched custom tabs: ${launched}`)
+                })
+                .catch(err => {
+                    console.error(err)
+                });
         } else {
             auth0.webAuth
                 .clearSession({})

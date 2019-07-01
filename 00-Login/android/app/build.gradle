@@ -133,6 +133,7 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-custom-tabs')
     implementation project(':react-native-auth0')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"

@@ -9,7 +9,6 @@ import {
     Alert,
     AppRegistry,
     Button,
-    Platform,
     StyleSheet,
     Text,
     View
@@ -45,16 +44,17 @@ export default class Auth0Sample extends Component {
     };
 
     _onLogout = () => {
-        if (Platform.OS === 'android') {
-            this.setState({ accessToken: null });
-        } else {
-            auth0.webAuth
-                .clearSession({})
-                .then(success => {
-                    this.setState({ accessToken: null });
-                })
-                .catch(error => console.log(error));
-        }
+        auth0.webAuth
+            .clearSession({})
+            .then(success => {
+                Alert.alert(
+                    'Logged out!'
+                );
+                this.setState({ accessToken: null });
+            })
+            .catch(error => {
+                console.log("Log out cancelled");
+            });
     };
 
     render() {

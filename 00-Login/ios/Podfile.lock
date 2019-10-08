@@ -1,4 +1,6 @@
 PODS:
+  - A0Auth0 (2.0.0):
+    - React
   - boost-for-react-native (1.63.0)
   - DoubleConversion (1.1.6)
   - FBLazyVector (0.61.2)
@@ -220,6 +222,7 @@ PODS:
   - Yoga (1.14.0)
 
 DEPENDENCIES:
+  - A0Auth0 (from `../node_modules/react-native-auth0/ios`)
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - FBReactNativeSpec (from `../node_modules/react-native/Libraries/FBReactNativeSpec`)
@@ -254,6 +257,8 @@ SPEC REPOS:
     - boost-for-react-native
 
 EXTERNAL SOURCES:
+  A0Auth0:
+    :path: "../node_modules/react-native-auth0/ios"
   DoubleConversion:
     :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
   FBLazyVector:
@@ -306,6 +311,7 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
+  A0Auth0: be47043e0129522a58d179d971ca86a444b52512
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   DoubleConversion: 5805e889d232975c086db112ece9ed034df7a0b2
   FBLazyVector: 68b6a76960fbd8ecd9fb7ce0aadd3329c3340a99

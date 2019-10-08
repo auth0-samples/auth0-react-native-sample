@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "react": "16.8.1",
-    "react-native": "0.61.2"
+    "react-native": "0.61.2",
+    "react-native-auth0": "^2.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.0",

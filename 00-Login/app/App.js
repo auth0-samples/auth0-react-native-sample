@@ -6,109 +6,75 @@
  * @flow
  */
 
-import React from 'react';
+import React, { Component } from 'react';
 import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
+    Alert,
+    Button,
+    StyleSheet,
+    Text,
+    View
 } from 'react-native';
+import Auth0 from 'react-native-auth0';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+var credentials = require('./auth0-credentials');
+const auth0 = new Auth0(credentials);
 
-const App: () => React$Node = () => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
-  );
-};
+class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { accessToken: null };
+    }
+
+    _onLogin = () => {
+        auth0.webAuth
+            .authorize({
+                scope: 'openid profile email'
+            })
+            .then(credentials => {
+                Alert.alert('AccessToken: ' + credentials.accessToken);
+                this.setState({ accessToken: credentials.accessToken });
+            })
+            .catch(error => console.log(error));
+    };
+
+    _onLogout = () => {
+        auth0.webAuth
+            .clearSession({})
+            .then(success => {
+                Alert.alert('Logged out!');
+                this.setState({ accessToken: null });
+            })
+            .catch(error => {
+                console.log("Log out cancelled");
+            });
+    };
+
+    render() {
+        let loggedIn = this.state.accessToken === null ? false : true;
+        return ( 
+        <View style = { styles.container }>
+            <Text style = { styles.header }> Auth0Sample - Login </Text>    
+            <Text>
+                You are { loggedIn ? '' : 'not ' } logged in . </Text>    
+                <Button onPress = { loggedIn ? this._onLogout : this._onLogin }
+                title = { loggedIn ? 'Log Out' : 'Log In' }/>   
+        </View >
+        );
+    }
+}
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#F5FCFF'
+    },
+    header: {
+        fontSize: 20,
+        textAlign: 'center',
+        margin: 10
+    }
 });
 
 export default App;

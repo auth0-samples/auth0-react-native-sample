@@ -2,17 +2,24 @@
 
 buildscript {
     ext {
+<<<<<<< HEAD
+=======
+        buildToolsVersion = "28.0.3"
+>>>>>>> generated new app with react native sdk 0.61.2
         minSdkVersion = 16
         compileSdkVersion = 28
-        targetSdkVersion = 27
-        supportLibVersion = "28.0.0"
+        targetSdkVersion = 28
     }
     repositories {
         google()
         jcenter()
     }
     dependencies {
+<<<<<<< HEAD
         classpath 'com.android.tools.build:gradle:3.3.0'
+=======
+        classpath("com.android.tools.build:gradle:3.4.2")
+>>>>>>> generated new app with react native sdk 0.61.2
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -21,17 +28,24 @@ buildscript {
 
 allprojects {
     repositories {
-        google()
-        jcenter()
+        mavenLocal()
         maven {
             // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
-            url "$rootDir/../node_modules/react-native/android"
+            url("$rootDir/../node_modules/react-native/android")
         }
-    }
-}
+        maven {
+            // Android JSC is installed from npm
+            url("$rootDir/../node_modules/jsc-android/dist")
+        }
 
-
+<<<<<<< HEAD
 task wrapper(type: Wrapper) {
     gradleVersion = '4.10.1'
     distributionUrl = distributionUrl.replace("bin", "all")
+=======
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
+>>>>>>> generated new app with react native sdk 0.61.2
 }

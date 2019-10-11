@@ -1,8 +1,7 @@
 # Auth0 React Native Samples - Login
 
-The complete guide to get started with the [react-native-auth0](https://github.com/auth0/react-native-auth0) SDK is on the Auth0 docs link below.
+The complete guide to getting started with [react-native-auth0](https://github.com/auth0/react-native-auth0) is our [React Native QuickStart](https://auth0.com/docs/quickstart/native/react-native/00-login).
 
-- [Login QuickStart](https://auth0.com/docs/quickstart/native/react-native/00-login)
 
 
 ## How to run the sample app
@@ -10,12 +9,13 @@ The complete guide to get started with the [react-native-auth0](https://github.c
 Clone the repository and install the dependencies:
 
 ```bash
+git clone git@github.com:auth0-samples/auth0-react-native-sample.git
 yarn install
 ```
 
 #### Additional step: iOS
 
-Change the directory into the `ios` folder. You must run the following command to install the SDK pod.
+Change the directory into the `ios` folder and run the following command to install the SDK pod:
 
 ```bash
 # cd ios/
@@ -24,26 +24,28 @@ pod install
 
 You should see the `A0Auth0` pod being installed and linked to the sample app.
 
-
 ### Auth0 Credentials 
 
-Open the [Auth0 dashboard](https://manage.auth0.com/dashboard/). Select your existing **Native** type application or create a new one. From the top of the application settings page take the `Client ID` and `Domain` values and put them in the `app/auth0-credentials.js` file. This file is being used in the `app/index.js` file to instantiate the library. You can also change and do that manually this way:
+1. Open the [Auth0 dashboard](https://manage.auth0.com/dashboard/) and click **Applications.**
+2. Select your existing Application from the list or click **Create Application** at the top to create a new one of type **Native**. 
+3. On the **Settings** tab for the Application, copy the "Client ID" and "Domain" values and paste them in the `app/auth0-credentials.js` file. This file is being used in the `app/index.js` file to instantiate the library. You can also change and do that manually this way:
 
 ```js
 import Auth0 from 'react-native-auth0';
 
 const config = {
-  domain: 'lbalmaceda.auth0.com',
-  clientId: '4e29mEHknIb1iKesCyeleWJUcz6fVR0O'
+  domain: 'YOUR_DOMAIN',
+  clientId: 'YOUR_CLIENT_ID'
 }
 
 const auth0 = new Auth0(config);
 ```
 
 ### Deep linking setup
-The methods required to handle the browser deep link are already in place. If you need to review them, check the full article linked on top of this document.
+The methods required to handle browser deep linking are already in place. If you need to review them, see the [React Native QuickStart](https://auth0.com/docs/quickstart/native/react-native/00-login).
 
-The URL that the Browser App calls back with the authentication result is created using a combination of the following values.
+The URL that the Browser App calls back with the authentication result is created using a combination of the following values:
+
 - package name / product bundle identifier; currently `com.auth0samples` on both platforms.
 - platform name
 - auth0 domain
@@ -51,13 +53,13 @@ The URL that the Browser App calls back with the authentication result is create
 If you happen to change the first remember to take note of it to update the [Auth0 dashboard](https://manage.auth0.com/dashboard/) configuration later.
 
 
-#### Additional step: Android
+#### Additional step for Android apps
 
 Open the `android/app/src/main/AndroidManifest.xml` file and locate the Intent Filter declaration. You must update the `android:host` property to use your Auth0 domain from the step above.
 
 ```xml
 <data
-  android:host="{DOMAIN}"
+  android:host="{YOUR_DOMAIN}"
   android:pathPrefix="/android/${applicationId}/callback"
   android:scheme="${applicationId}" />
 ```
@@ -66,21 +68,21 @@ Open the `android/app/src/main/AndroidManifest.xml` file and locate the Intent F
 
 ### Whitelist the URLs
 
-Open one more time the [Auth0 dashboard](https://manage.auth0.com/dashboard/) and select your application. In the "Allowed Callback URLs" add the next 2 values separated with a comma. This is required for the authentication result to be redirected by the browser to the app.
+In the [Auth0 dashboard](https://manage.auth0.com/dashboard/), click **Applications** select your application from the list. In the "Allowed Callback URLs" field, add the 2 values below separated with a comma. This is required for the authentication result to be redirected from the browser to the app.
 
 ```
-com.auth0samples://lbalmaceda.auth0.com/ios/com.auth0samples/callback, 
-com.auth0samples://lbalmaceda.auth0.com/android/com.auth0samples/callback,
+com.auth0samples://YOUR_DOMAIN/ios/com.auth0samples/callback, 
+com.auth0samples://YOUR_DOMAIN/android/com.auth0samples/callback,
 ```
 
-Do the same on the "Allowed Logout URLs". This is required for the browser to redirect to the app after logging you out.
+Add the same values to the "Allowed Logout URLs" field as well. This is required for the browser to redirect to the app after logging you out.
 
-Remember to click **SAVE** to save the changes.
+Finally, scroll down and click **Save Changes**.
 
 
 ### Run the apps
 
-Run your favorite emulator or simulator, or plug your device.
+Run your app on an emulator, simulator, or your own connected device.
 
 - To run the app on iOS run `yarn run ios`.
 - To run the app on Android run `yarn run android`.

@@ -13,7 +13,7 @@ git clone git@github.com:auth0-samples/auth0-react-native-sample.git
 yarn install
 ```
 
-#### Additional step: iOS
+#### Additional step for iOS apps
 
 Change the directory into the `ios` folder and run the following command to install the SDK pod:
 
@@ -44,13 +44,13 @@ const auth0 = new Auth0(config);
 ### Deep linking setup
 The methods required to handle browser deep linking are already in place. If you need to review them, see the [React Native QuickStart](https://auth0.com/docs/quickstart/native/react-native/00-login).
 
-The URL that the Browser App calls back with the authentication result is created using a combination of the following values:
+The URL that the Browser app calls to pass the authentication result back to your app is created using a combination of the following values:
 
 - package name / product bundle identifier; currently `com.auth0samples` on both platforms.
 - platform name
 - auth0 domain
 
-If you happen to change the first remember to take note of it to update the [Auth0 dashboard](https://manage.auth0.com/dashboard/) configuration later.
+If you happen to change the first remember to take note of it to [update the callback URLs](#whitelist-the-urls) later.
 
 
 #### Additional step for Android apps
@@ -74,6 +74,8 @@ In the [Auth0 dashboard](https://manage.auth0.com/dashboard/), click **Applicati
 com.auth0samples://YOUR_DOMAIN/ios/com.auth0samples/callback, 
 com.auth0samples://YOUR_DOMAIN/android/com.auth0samples/callback,
 ```
+
+> Replace YOUR_DOMAIN with your actual Auth0 domain value
 
 Add the same values to the "Allowed Logout URLs" field as well. This is required for the browser to redirect to the app after logging you out.
 

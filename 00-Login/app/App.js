@@ -45,7 +45,7 @@ class App extends Component {
                 this.setState({ accessToken: null });
             })
             .catch(error => {
-                console.log("Log out cancelled");
+                console.log('Log out cancelled');
             });
     };
 
@@ -55,7 +55,7 @@ class App extends Component {
         <View style = { styles.container }>
             <Text style = { styles.header }> Auth0Sample - Login </Text>    
             <Text>
-                You are { loggedIn ? '' : 'not ' } logged in . </Text>    
+                You are{ loggedIn ? ' ' : ' not ' }logged in . </Text>    
                 <Button onPress = { loggedIn ? this._onLogout : this._onLogin }
                 title = { loggedIn ? 'Log Out' : 'Log In' }/>   
         </View >

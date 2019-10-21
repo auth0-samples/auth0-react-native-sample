@@ -40,7 +40,7 @@ com.auth0samples://YOUR_DOMAIN/android/com.auth0samples/callback
 
 ### Deep linking setup (Android only)
 
-Open the `android/app/src/main/AndroidManifest.xml` file and locate the Intent Filter declaration. You must update the `android:host` property to use your Auth0 domain from the step above.
+Open the `android/app/src/main/AndroidManifest.xml` file and locate the Intent Filter declaration. You must update the `android:host` property to use your Auth0 Domain from the step above.
 
 ```xml
 <data

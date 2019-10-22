@@ -16,7 +16,7 @@ import {
 } from 'react-native';
 import Auth0 from 'react-native-auth0';
 
-var credentials = require('./auth0-credentials');
+var credentials = require('./auth0-configuration');
 const auth0 = new Auth0(credentials);
 
 class App extends Component {
@@ -51,13 +51,13 @@ class App extends Component {
 
     render() {
         let loggedIn = this.state.accessToken === null ? false : true;
-        return ( 
+        return (
         <View style = { styles.container }>
-            <Text style = { styles.header }> Auth0Sample - Login </Text>    
+            <Text style = { styles.header }> Auth0Sample - Login </Text>
             <Text>
-                You are{ loggedIn ? ' ' : ' not ' }logged in . </Text>    
+                You are{ loggedIn ? ' ' : ' not ' }logged in . </Text>
                 <Button onPress = { loggedIn ? this._onLogout : this._onLogin }
-                title = { loggedIn ? 'Log Out' : 'Log In' }/>   
+                title = { loggedIn ? 'Log Out' : 'Log In' }/>
         </View >
         );
     }

@@ -38,7 +38,7 @@ The `applicationId` will get auto-completed dynamically.
 
 ## 2. Configure Auth0
 
-1. Copy the `app/auth0-configuration.example.js` in this sample to `app/auth0-configuration.js`.
+1. Copy the `app/auth0-configuration.js.example` in this sample to `app/auth0-configuration.js`.
 2. Open your [Applications in the Auth0 dashboard](https://manage.auth0.com/#/applications).
 3. Select your existing Application from the list or click **Create Application** at the top to create a new Application of type **Native**.
 4. On the **Settings** tab for the Application, copy the "Client ID" and "Domain" values and paste them into the `app/auth0-credentials.js` file created above.

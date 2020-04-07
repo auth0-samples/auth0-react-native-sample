@@ -49,7 +49,7 @@ Add an entry to your **Allowed Callback URLs** in the [Auth0 Dashboard](https://
 
 ### iOS
 
-The Android project uses the callback scheme `auth0.samples.Auth0Sample`
+The ios project uses the callback scheme `auth0.samples.Auth0Sample`
 
 Add an entry to your **Allowed Callback URLs** in the [Auth0 Dashboard](https://manage.auth0.com/#/clients) with the value
 

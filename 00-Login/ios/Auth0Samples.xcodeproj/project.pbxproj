@@ -18,8 +18,6 @@
 		2DCD954D1E0B4F2C00145EB5 /* Auth0SamplesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* Auth0SamplesTests.m */; };
 		35FF2DFB666D3A64BE500666 /* libPods-Auth0Samples.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F009A8E0FE990815B42B17 /* libPods-Auth0Samples.a */; };
 		74EBC5C5FC1F96E8AD6333B3 /* libPods-Auth0Samples-Auth0SamplesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D2CD82003B89DD883470BF /* libPods-Auth0Samples-Auth0SamplesTests.a */; };
-		910A5503C7F44F37DB2A6900 /* libPods-Auth0Samples-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0852FB97997927FE36005DF5 /* libPods-Auth0Samples-tvOSTests.a */; };
-		AA6CE01F84C69C0882596421 /* libPods-Auth0Samples-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCD33F76FD758F317F20AE7D /* libPods-Auth0Samples-tvOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +42,6 @@
 		00E356EE1AD99517003FC87E /* Auth0SamplesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Auth0SamplesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* Auth0SamplesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Auth0SamplesTests.m; sourceTree = "<group>"; };
-		0852FB97997927FE36005DF5 /* libPods-Auth0Samples-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Auth0Samples-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A55395C888295B28595EDF1 /* Pods-Auth0Samples-Auth0SamplesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auth0Samples-Auth0SamplesTests.debug.xcconfig"; path = "Target Support Files/Pods-Auth0Samples-Auth0SamplesTests/Pods-Auth0Samples-Auth0SamplesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0B23DF90021AAE5E781BDBDE /* Pods-Auth0Samples.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auth0Samples.release.xcconfig"; path = "Target Support Files/Pods-Auth0Samples/Pods-Auth0Samples.release.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Auth0Samples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Auth0Samples.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,14 +54,9 @@
 		2D02E47B1E0B4A5D006451C7 /* Auth0Samples-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auth0Samples-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* Auth0Samples-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Auth0Samples-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		40F009A8E0FE990815B42B17 /* libPods-Auth0Samples.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Auth0Samples.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		426266B1FB145BB51E38DADE /* Pods-Auth0Samples-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auth0Samples-tvOS.release.xcconfig"; path = "Target Support Files/Pods-Auth0Samples-tvOS/Pods-Auth0Samples-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		5F6DE0318D4F3833C56F2B19 /* Pods-Auth0Samples.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auth0Samples.debug.xcconfig"; path = "Target Support Files/Pods-Auth0Samples/Pods-Auth0Samples.debug.xcconfig"; sourceTree = "<group>"; };
 		66D2CD82003B89DD883470BF /* libPods-Auth0Samples-Auth0SamplesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Auth0Samples-Auth0SamplesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81B37E689B56A34ED9688334 /* Pods-Auth0SamplesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auth0SamplesTests.debug.xcconfig"; path = "Target Support Files/Pods-Auth0SamplesTests/Pods-Auth0SamplesTests.debug.xcconfig"; sourceTree = "<group>"; };
-		8AE7194CA1F087202D68ECFC /* Pods-Auth0Samples-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auth0Samples-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Auth0Samples-tvOSTests/Pods-Auth0Samples-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		9224DECD8C7221CF94D13FAA /* Pods-Auth0Samples-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auth0Samples-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Auth0Samples-tvOSTests/Pods-Auth0Samples-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		9A6FBBC3DF3A0975A3B2E6AD /* Pods-Auth0Samples-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auth0Samples-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Auth0Samples-tvOS/Pods-Auth0Samples-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		BCD33F76FD758F317F20AE7D /* libPods-Auth0Samples-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Auth0Samples-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD945658248EE64B004E1DC2 /* Auth0Samples-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Auth0Samples-Bridging-Header.h"; sourceTree = "<group>"; };
 		DD4F3E0930AF58F7A3EC2909 /* Pods-Auth0SamplesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auth0SamplesTests.release.xcconfig"; path = "Target Support Files/Pods-Auth0SamplesTests/Pods-Auth0SamplesTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -93,7 +85,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA6CE01F84C69C0882596421 /* libPods-Auth0Samples-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +92,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				910A5503C7F44F37DB2A6900 /* libPods-Auth0Samples-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,10 +135,6 @@
 			children = (
 				5F6DE0318D4F3833C56F2B19 /* Pods-Auth0Samples.debug.xcconfig */,
 				0B23DF90021AAE5E781BDBDE /* Pods-Auth0Samples.release.xcconfig */,
-				9A6FBBC3DF3A0975A3B2E6AD /* Pods-Auth0Samples-tvOS.debug.xcconfig */,
-				426266B1FB145BB51E38DADE /* Pods-Auth0Samples-tvOS.release.xcconfig */,
-				8AE7194CA1F087202D68ECFC /* Pods-Auth0Samples-tvOSTests.debug.xcconfig */,
-				9224DECD8C7221CF94D13FAA /* Pods-Auth0Samples-tvOSTests.release.xcconfig */,
 				81B37E689B56A34ED9688334 /* Pods-Auth0SamplesTests.debug.xcconfig */,
 				DD4F3E0930AF58F7A3EC2909 /* Pods-Auth0SamplesTests.release.xcconfig */,
 				0A55395C888295B28595EDF1 /* Pods-Auth0Samples-Auth0SamplesTests.debug.xcconfig */,
@@ -163,8 +149,6 @@
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				40F009A8E0FE990815B42B17 /* libPods-Auth0Samples.a */,
-				BCD33F76FD758F317F20AE7D /* libPods-Auth0Samples-tvOS.a */,
-				0852FB97997927FE36005DF5 /* libPods-Auth0Samples-tvOSTests.a */,
 				66D2CD82003B89DD883470BF /* libPods-Auth0Samples-Auth0SamplesTests.a */,
 			);
 			name = Frameworks;
@@ -214,6 +198,7 @@
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				9059A87E53BE339D33633E51 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -235,6 +220,7 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				3A629BFB394C483FFDC97F8E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -249,7 +235,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Auth0Samples-tvOS" */;
 			buildPhases = (
-				AA68A49765906919BD11168F /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
@@ -269,7 +254,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Auth0Samples-tvOSTests" */;
 			buildPhases = (
-				9320DD217F2D8779B2506ED0 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
@@ -298,6 +282,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = 22U9KJ5PK6;
 						LastSwiftMigration = 1150;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
@@ -395,6 +380,24 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
+		3A629BFB394C483FFDC97F8E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Auth0Samples/Pods-Auth0Samples-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Auth0Samples/Pods-Auth0Samples-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		68A2BAE00E245E68556CDCED /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -417,48 +420,22 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9320DD217F2D8779B2506ED0 /* [CP] Check Pods Manifest.lock */ = {
+		9059A87E53BE339D33633E51 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
+				"${PODS_ROOT}/Target Support Files/Pods-Auth0Samples-Auth0SamplesTests/Pods-Auth0Samples-Auth0SamplesTests-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Auth0Samples-tvOSTests-checkManifestLockResult.txt",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AA68A49765906919BD11168F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Auth0Samples-tvOS-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Auth0Samples-Auth0SamplesTests/Pods-Auth0Samples-Auth0SamplesTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CD80D77EE5872E10B14280C4 /* [CP] Check Pods Manifest.lock */ = {
@@ -637,6 +614,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = 22U9KJ5PK6;
 				INFOPLIST_FILE = Auth0Samples/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -644,7 +622,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.auth0samples;
+				PRODUCT_BUNDLE_IDENTIFIER = com.auth0.ritazerrizuela.ReactNativeDemo;
 				PRODUCT_NAME = Auth0Samples;
 				SWIFT_OBJC_BRIDGING_HEADER = "Auth0Samples-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -660,6 +638,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 22U9KJ5PK6;
 				INFOPLIST_FILE = Auth0Samples/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -667,7 +646,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.auth0samples;
+				PRODUCT_BUNDLE_IDENTIFIER = com.auth0.ritazerrizuela.ReactNativeDemo;
 				PRODUCT_NAME = Auth0Samples;
 				SWIFT_OBJC_BRIDGING_HEADER = "Auth0Samples-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -677,7 +656,6 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A6FBBC3DF3A0975A3B2E6AD /* Pods-Auth0Samples-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -705,7 +683,6 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 426266B1FB145BB51E38DADE /* Pods-Auth0Samples-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -733,7 +710,6 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8AE7194CA1F087202D68ECFC /* Pods-Auth0Samples-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -760,7 +736,6 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9224DECD8C7221CF94D13FAA /* Pods-Auth0Samples-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -817,6 +792,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -876,6 +852,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

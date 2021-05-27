@@ -622,7 +622,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.auth0.ritazerrizuela.ReactNativeDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.auth0samples;
 				PRODUCT_NAME = Auth0Samples;
 				SWIFT_OBJC_BRIDGING_HEADER = "Auth0Samples-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -646,7 +646,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.auth0.ritazerrizuela.ReactNativeDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.auth0samples;
 				PRODUCT_NAME = Auth0Samples;
 				SWIFT_OBJC_BRIDGING_HEADER = "Auth0Samples-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

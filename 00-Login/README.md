@@ -49,7 +49,7 @@ android {
 }
 ```
 
-The `applicationId` value will be auto-replaced on runtime with the package name or id of your application (e.g. `com.example.app`).
+The `applicationId` value will be auto-replaced at runtime with the package name or ID of your application (e.g. `com.example.app`).
 
 ## 2. Configure Auth0
 

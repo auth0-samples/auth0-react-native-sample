@@ -25,16 +25,31 @@ You should see the `A0Auth0` pod being installed and linked to the sample app.
 
 ### Android applications only
 
-Open the `android/app/src/main/AndroidManifest.xml` file and locate the Intent Filter declaration. You must update the `android:host` property to use your Auth0 Domain from the step above.
+Open the `android/app/build.gradle` file and locate the following manifest placeholders:
 
-```xml
-<data
-  android:host="{YOUR_DOMAIN}"
-  android:pathPrefix="/android/${applicationId}/callback"
-  android:scheme="${applicationId}" />
+```groovy
+android {
+    defaultConfig {
+        manifestPlaceholders = [auth0Domain: "YOUR_AUTH0_DOMAIN",
+                                auth0Scheme: "${applicationId}"]
+    }
+    ...
+}
 ```
 
-The `applicationId` will get auto-completed dynamically.
+Replace `YOUR_AUTH0_DOMAIN` with your Auth0 domain value. If you have `samples.auth0.com` as your Auth0 domain you would have a configuration like the following:
+
+```groovy
+android {
+    defaultConfig {
+        manifestPlaceholders = [auth0Domain: "samples.auth0.com", 
+                                auth0Scheme: "${applicationId}"]
+    }
+    ...
+}
+```
+
+The `applicationId` value will be auto-replaced on runtime with the package name or id of your application (e.g. `com.example.app`).
 
 ## 2. Configure Auth0
 

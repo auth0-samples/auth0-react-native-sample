@@ -47,7 +47,7 @@ const App = () => {
             });
     };
 
-    let loggedIn = accessToken === null ? false : true;
+    let loggedIn = accessToken === null;
     return (
         <View style={styles.container}>
             <Text style={styles.header}> Auth0Sample - Login </Text>

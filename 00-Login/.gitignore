@@ -58,9 +58,10 @@ buck-out/
 # Bundle artifact
 *.jsbundle
 
-# CocoaPods
+# Ruby / CocoaPods
 /ios/Pods/
 /ios/Podfile.lock
+/vendor/bundle/
 
 # Auth0 configuration file
 app/auth0-configuration.js

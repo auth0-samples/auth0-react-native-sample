@@ -9,9 +9,9 @@
     "test": "jest"
   },
   "dependencies": {
-    "react": "17.0.2",
-    "react-native": "0.69.0",
-    "react-native-auth0": "^2.13.0"
+    "react": "18.0.0",
+    "react-native": "0.69.1",
+    "react-native-auth0": "^2.13.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -21,7 +21,7 @@
     "eslint": "^7.32.0",
     "jest": "^28.1.0",
     "metro-react-native-babel-preset": "^0.71.0",
-    "react-test-renderer": "17.0.2"
+    "react-test-renderer": "18.0.0"
   },
   "jest": {
     "preset": "react-native"

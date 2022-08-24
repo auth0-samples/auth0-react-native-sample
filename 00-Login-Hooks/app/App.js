@@ -6,13 +6,12 @@
  * @flow strict-local
  */
 
-import React, {useState} from 'react';
+import React from 'react';
 import {Alert, Button, StyleSheet, Text, View} from 'react-native';
 import {useAuth0, Auth0Provider} from 'react-native-auth0';
 import credentials from './auth0-configuration';
 
 const Home = () => {
-  const [_, setAccessToken] = useState(null);
   const {authorize, clearSession, user, getCredentials} = useAuth0();
 
   const onLogin = async () => {
@@ -20,7 +19,6 @@ const Home = () => {
       await authorize({scope: 'openid profile email'});
       const {accessToken} = await getCredentials();
       Alert.alert('AccessToken: ' + accessToken);
-      setAccessToken(accessToken);
     } catch (e) {
       console.log(e);
     }
@@ -31,7 +29,6 @@ const Home = () => {
   const onLogout = async () => {
     try {
       await clearSession();
-      setAccessToken(null);
     } catch (e) {
       console.log('Log out cancelled');
     }

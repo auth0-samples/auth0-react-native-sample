@@ -8,7 +8,7 @@ Clone the repository and install the dependencies with [Yarn](https://yarnpkg.co
 
 ```bash
 git clone git@github.com:auth0-samples/auth0-react-native-sample.git
-cd auth0-react-native-sample
+cd auth0-react-native-sample/00-login-hooks
 yarn install
 ```
 
@@ -42,7 +42,7 @@ Replace `YOUR_AUTH0_DOMAIN` with your Auth0 domain value. If you have `samples.a
 ```groovy
 android {
     defaultConfig {
-        manifestPlaceholders = [auth0Domain: "samples.auth0.com", 
+        manifestPlaceholders = [auth0Domain: "samples.auth0.com",
                                 auth0Scheme: "${applicationId}"]
     }
     ...
@@ -76,4 +76,4 @@ Run your app on an emulator, simulator, or your own connected device.
 
 The first run may take a while to fully launch. Keep an eye out for confirmation windows and watch the terminal for output and results.
 
-**Note:** If you get an error about "No bundle URL present" try clicking reload in the app or running `yarn run ios` again. 
+**Note:** If you get an error about "No bundle URL present" try clicking reload in the app or running `yarn run ios` again.

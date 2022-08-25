@@ -9,7 +9,7 @@
 import React from 'react';
 import {Alert, Button, StyleSheet, Text, View} from 'react-native';
 import {useAuth0, Auth0Provider} from 'react-native-auth0';
-import credentials from './auth0-configuration';
+import config from './auth0-configuration';
 
 const Home = () => {
   const {authorize, clearSession, user, getCredentials} = useAuth0();
@@ -49,7 +49,7 @@ const Home = () => {
 
 const App = () => {
   return (
-    <Auth0Provider domain={credentials.domain} clientId={credentials.clientId}>
+    <Auth0Provider domain={config.domain} clientId={config.clientId}>
       <Home />
     </Auth0Provider>
   );

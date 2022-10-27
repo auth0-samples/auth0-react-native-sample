@@ -12,26 +12,18 @@ import {useAuth0, Auth0Provider} from 'react-native-auth0';
 import config from './auth0-configuration';
 
 const Home = () => {
-  const {authorize, clearSession, user, getCredentials} = useAuth0();
+  const {authorize, clearSession, user, getCredentials, error} = useAuth0();
 
   const onLogin = async () => {
-    try {
-      await authorize({scope: 'openid profile email'});
-      const {accessToken} = await getCredentials();
-      Alert.alert('AccessToken: ' + accessToken);
-    } catch (e) {
-      console.log(e);
-    }
+    await authorize({scope: 'openid profile email'});
+    const {accessToken} = await getCredentials();
+    Alert.alert('AccessToken: ' + accessToken);
   };
 
   const loggedIn = user !== undefined && user !== null;
 
   const onLogout = async () => {
-    try {
-      await clearSession();
-    } catch (e) {
-      console.log('Log out cancelled');
-    }
+    await clearSession({federated: true}, {localStorageOnly: false});
   };
 
   return (
@@ -43,6 +35,7 @@ const Home = () => {
         onPress={loggedIn ? onLogout : onLogin}
         title={loggedIn ? 'Log Out' : 'Log In'}
       />
+      {error && <Text style={styles.error}>{error.message}</Text>}
     </View>
   );
 };
@@ -67,6 +60,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     margin: 10,
   },
+  error: {
+    margin: 20,
+    textAlign: 'center',
+    color: '#D8000C'
+  }
 });
 
 export default App;

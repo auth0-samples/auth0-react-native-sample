@@ -35,7 +35,7 @@ const Home = () => {
         onPress={loggedIn ? onLogout : onLogin}
         title={loggedIn ? 'Log Out' : 'Log In'}
       />
-      {error && <Text style={styles.error} >{error.message}</Text>}
+      {error && <Text style={styles.error}>{error.message}</Text>}
     </View>
   );
 };

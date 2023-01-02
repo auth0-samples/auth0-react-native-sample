@@ -1,6 +1,9 @@
-# Auth0 React Native - E Samples - Login
+# Auth0 React Native Expo Samples - Login
 
 The complete guide to getting started with [react-native-auth0](https://github.com/auth0/react-native-auth0) is our [Expo QuickStart](https://auth0.com/docs/quickstart/native/react-native-expo/interactive).
+
+> **Warning**   
+> This SDK is not compatible with "Expo Go" app. It is compatible only with Custom Dev Client and EAS builds.
 
 ## 1. Install
 

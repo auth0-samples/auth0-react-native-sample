@@ -10,7 +10,6 @@ const Home = () => {
     try {
       await authorize({scope: 'openid profile email'}, {customScheme: 'auth0.com.auth0samples'});
       let credentials = await getCredentials();
-      console.log(credentials)
       Alert.alert('AccessToken: ' + credentials.accessToken);
     } catch (e) {
       console.log(e);

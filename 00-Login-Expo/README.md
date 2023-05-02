@@ -24,7 +24,9 @@ Open the `app.json` file and locate the following plugin configuration:
     [
         "react-native-auth0",
         {
-            "domain": "{DOMAIN}"
+            "domain": "{DOMAIN}",
+            "customScheme": "auth0.com.auth0samples"
+
         }
     ]
 ]
@@ -37,7 +39,8 @@ Replace `{DOMAIN}` with your Auth0 domain value. If you have `samples.auth0.com`
     [
         "react-native-auth0",
         {
-            "domain": "samples.auth0.com"
+            "domain": "samples.auth0.com",
+            "customScheme": "auth0.com.auth0samples"
         }
     ]
 ]
@@ -52,8 +55,8 @@ Replace `{DOMAIN}` with your Auth0 domain value. If you have `samples.auth0.com`
 5. In the **Allowed Callback URLs** field, paste in the text below and replace `YOUR_DOMAIN` with the **Domain** from above. These URLs are required for the authentication result to be redirected from the browser to the app:
 
 ```
-com.auth0samples://YOUR_DOMAIN/ios/com.auth0samples/callback,
-com.auth0samples://YOUR_DOMAIN/android/com.auth0samples/callback
+auth0.com.auth0samples://YOUR_DOMAIN/ios/com.auth0samples/callback,
+auth0.com.auth0samples://YOUR_DOMAIN/android/com.auth0samples/callback
 ```
 
 6. Add the same values to the **Allowed Logout URLs** field as well. These are required for the browser to redirect back to the app after the user logs out.

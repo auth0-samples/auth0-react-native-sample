@@ -25,9 +25,7 @@ const App = () => {
 
     const onLogin = () => {
         auth0.webAuth
-            .authorize({
-                scope: 'openid profile email'
-            })
+            .authorize()
             .then(credentials => {
                 Alert.alert('AccessToken: ' + credentials.accessToken);
                 setAccessToken(credentials.accessToken);
@@ -38,11 +36,11 @@ const App = () => {
     const onLogout = () => {
         auth0.webAuth
             .clearSession({})
-            .then(success => {
+            .then(() => {
                 Alert.alert('Logged out!');
                 setAccessToken(null);
             })
-            .catch(error => {
+            .catch(() => {
                 console.log('Log out cancelled');
             });
     };

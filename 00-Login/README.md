@@ -31,7 +31,7 @@ Open the `android/app/build.gradle` file and locate the following manifest place
 android {
     defaultConfig {
         manifestPlaceholders = [auth0Domain: "YOUR_AUTH0_DOMAIN",
-                                auth0Scheme: "${applicationId}"]
+                                auth0Scheme: "${applicationId}.auth0"]
     }
     ...
 }
@@ -43,7 +43,7 @@ Replace `YOUR_AUTH0_DOMAIN` with your Auth0 domain value. If you have `samples.a
 android {
     defaultConfig {
         manifestPlaceholders = [auth0Domain: "samples.auth0.com", 
-                                auth0Scheme: "${applicationId}"]
+                                auth0Scheme: "${applicationId}.auth0"]
     }
     ...
 }

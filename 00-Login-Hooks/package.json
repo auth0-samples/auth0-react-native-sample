@@ -11,7 +11,7 @@
   "dependencies": {
     "react": "18.2.0",
     "react-native": "0.69.2",
-    "react-native-auth0": "^2.16.0"
+    "react-native-auth0": "../react-native-auth0-v3.0.0-beta.3.tgz"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

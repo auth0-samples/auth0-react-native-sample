@@ -24,8 +24,7 @@ Open the `app.json` file and locate the following plugin configuration:
     [
         "react-native-auth0",
         {
-            "domain": "{DOMAIN}",
-            "customScheme": "auth0.com.auth0samples"
+            "domain": "{DOMAIN}"
 
         }
     ]
@@ -39,8 +38,7 @@ Replace `{DOMAIN}` with your Auth0 domain value. If you have `samples.auth0.com`
     [
         "react-native-auth0",
         {
-            "domain": "samples.auth0.com",
-            "customScheme": "auth0.com.auth0samples"
+            "domain": "samples.auth0.com"
         }
     ]
 ]

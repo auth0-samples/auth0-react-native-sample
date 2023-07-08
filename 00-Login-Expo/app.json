@@ -10,8 +10,7 @@
       [
         "react-native-auth0",
         {
-          "domain": "{DOMAIN}",
-          "customScheme": "auth0.com.auth0samples"
+          "domain": "{DOMAIN}"
         }
       ]
     ],

@@ -1,4 +1,5 @@
 apply plugin: "com.android.application"
+apply plugin: "com.facebook.react"
 
 import com.android.build.OutputFile
 import org.apache.tools.ant.taskdefs.condition.Os
@@ -140,7 +141,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
-        manifestPlaceholders = [auth0Domain: "{DOMAIN}", auth0Scheme: "${applicationId}"]
+        manifestPlaceholders = [auth0Domain: "{DOMAIN}", auth0Scheme: "${applicationId}.auth0"]
     }
 
     splits {

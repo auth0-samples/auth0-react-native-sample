@@ -15,7 +15,7 @@ const Home = () => {
   const {authorize, clearSession, user, getCredentials, error} = useAuth0();
 
   const onLogin = async () => {
-    await authorize({scope: 'openid profile email'});
+    await authorize();
     const {accessToken} = await getCredentials();
     Alert.alert('AccessToken: ' + accessToken);
   };

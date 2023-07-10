@@ -1760,9 +1760,9 @@
   integrity sha512-cRPZh2rBswFnGt5X5EUEPs0r+pAsXxYsifv/fgy9ZLQokuT52bPH+9xjDR+7TafRua5CttGW83wP4TntRcWNDA==
 
 "@react-native/metro-config@^0.72.7":
-  version "0.72.7"
-  resolved "https://registry.yarnpkg.com/@react-native/metro-config/-/metro-config-0.72.7.tgz#2252fc796fbb487b8584161e1bcdd3eecf8d1aa6"
-  integrity sha512-v+RhvCcMzAUZOibBJQ0na6Ah/HEloGrOPGJmxhdwlxGp05L7ejfu/gPghKeYEx35nlp519YSLiOlO4VW4dI5+g==
+  version "0.72.8"
+  resolved "https://registry.yarnpkg.com/@react-native/metro-config/-/metro-config-0.72.8.tgz#9b030abe2e3062adb8f50c6c97cd215d95c2491c"
+  integrity sha512-ZUeBUgixhB++ho42nM8CqeYocsP1gPWDP/XWsLDfU9OOEoWshuTkENME1Wb7tLj40CJ7BrtAwAGHuToWbZ8wbQ==
   dependencies:
     "@react-native/js-polyfills" "^0.72.1"
     metro-config "0.76.5"
@@ -2503,9 +2503,9 @@ camelcase@^6.2.0:
   integrity sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==
 
 caniuse-lite@^1.0.30001503:
-  version "1.0.30001513"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001513.tgz#382fe5fbfb0f7abbaf8c55ca3ac71a0307a752e9"
-  integrity sha512-pnjGJo7SOOjAGytZZ203Em95MRM8Cr6jhCXNF/FAXTpCTRTECnqQWLpiTRqrFtdYcth8hf4WECUpkezuYsMVww==
+  version "1.0.30001514"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001514.tgz#e2a7e184a23affc9367b7c8d734e7ec4628c1309"
+  integrity sha512-ENcIpYBmwAAOm/V2cXgM7rZUrKKaqisZl4ZAI520FIkqGXUxJjmaIssbRW5HVVR5tyV6ygTLIm15aU8LUmQSaQ==
 
 chalk@^2.0.0:
   version "2.4.2"
@@ -5585,9 +5585,9 @@ range-parser@~1.2.1:
   integrity sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==
 
 react-devtools-core@^4.27.2:
-  version "4.27.8"
-  resolved "https://registry.yarnpkg.com/react-devtools-core/-/react-devtools-core-4.27.8.tgz#b7b387b079c14ae9a214d4846a402da2b6efd164"
-  integrity sha512-KwoH8/wN/+m5wTItLnsgVraGNmFrcTWR3k1VimP1HjtMMw4CNF+F5vg4S/0tzTEKIdpCi2R7mPNTC+/dswZMgw==
+  version "4.28.0"
+  resolved "https://registry.yarnpkg.com/react-devtools-core/-/react-devtools-core-4.28.0.tgz#3fa18709b24414adddadac33b6b9cea96db60f2f"
+  integrity sha512-E3C3X1skWBdBzwpOUbmXG8SgH6BtsluSMe+s6rRcujNKG1DGi8uIfhdhszkgDpAsMoE55hwqRUzeXCmETDBpTg==
   dependencies:
     shell-quote "^1.6.1"
     ws "^7"
@@ -5607,9 +5607,10 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
-react-native-auth0@../react-native-auth0-3.0.0-beta.3.tgz:
-  version "3.0.0-beta.3"
-  resolved "../react-native-auth0-3.0.0-beta.3.tgz#6bda95749abbe31edea891794f062227f5c90768"
+react-native-auth0@^3.0.0-beta.2:
+  version "3.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/react-native-auth0/-/react-native-auth0-3.0.0-beta.2.tgz#47274da034411fb68645591b2b9695a4c2e75e94"
+  integrity sha512-JmJ2Dq5/4/IbuJy7iJM5jpLf2KwRc0JILfUucAQ+gMVa7hVLqqycH3IM4QcutqmfYbPufyn/J+rNE8zsZ49n2w==
   dependencies:
     base-64 "^0.1.0"
     crypto-js "^4.0.0"

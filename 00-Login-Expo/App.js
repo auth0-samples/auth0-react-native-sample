@@ -4,7 +4,7 @@ import {useAuth0, Auth0Provider} from 'react-native-auth0';
 import config from './auth0-configuration';
 
 const Home = () => {
-  const {authorize, clearSession, user, error, getCredentials} = useAuth0();
+  const {authorize, clearSession, user, error, getCredentials, isLoading} = useAuth0();
 
   const onLogin = async () => {
     try {
@@ -25,6 +25,10 @@ const Home = () => {
       console.log('Log out cancelled');
     }
   };
+
+  if (isLoading) {
+    return <View style={styles.container}><Text>Loading</Text></View>;
+  }
 
   return (
     <View style={styles.container}>

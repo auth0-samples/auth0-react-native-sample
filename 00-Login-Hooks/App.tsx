@@ -12,7 +12,7 @@ import {useAuth0, Auth0Provider} from 'react-native-auth0';
 import config from './auth0-configuration';
 
 const Home = () => {
-  const {authorize, clearSession, user, getCredentials, error} = useAuth0();
+  const {authorize, clearSession, user, getCredentials, error, isLoading} = useAuth0();
 
   const onLogin = async () => {
     await authorize({}, {});
@@ -25,6 +25,11 @@ const Home = () => {
   const onLogout = async () => {
     await clearSession({}, {});
   };
+
+
+  if (isLoading) {
+    return <View style={styles.container}><Text>Loading</Text></View>;
+  }
 
   return (
     <View style={styles.container}>

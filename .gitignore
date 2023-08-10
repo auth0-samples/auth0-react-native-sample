@@ -61,3 +61,5 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
+00-Login/auth0-configuration.js
+00-Login-Hooks/auth0-configuration.js

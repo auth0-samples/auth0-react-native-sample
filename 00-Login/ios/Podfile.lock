@@ -1,5 +1,5 @@
 PODS:
-  - A0Auth0 (3.0.0-beta.3):
+  - A0Auth0 (3.0.0):
     - Auth0 (= 2.4.0)
     - JWTDecode (= 3.1.0)
     - React-Core

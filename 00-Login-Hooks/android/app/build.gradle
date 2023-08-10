@@ -81,6 +81,16 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        manifestPlaceholders = [auth0Domain: "{DOMAIN}", auth0Scheme: "${applicationId}"]
+    }
+
+    splits {
+        abi {
+            reset()
+            enable enableSeparateBuildPerCPUArchitecture
+            universalApk false  // If true, also generate a universal APK
+            include (*reactNativeArchitectures())
+        }
     }
     signingConfigs {
         debug {

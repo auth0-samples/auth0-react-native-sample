@@ -73,4 +73,7 @@ buck-out/
 web-build/
 dist/
 
+ios
+android
+
 # @end expo-cli

@@ -4,11 +4,11 @@ import {useAuth0, Auth0Provider} from 'react-native-auth0';
 import config from './auth0-configuration';
 
 const Home = () => {
-  const {authorize, clearSession, user, error, getCredentials} = useAuth0();
+  const {authorize, clearSession, user, error, getCredentials, isLoading} = useAuth0();
 
   const onLogin = async () => {
     try {
-      await authorize({scope: 'openid profile email'}, {customScheme: 'auth0.com.auth0samples'});
+      await authorize();
       let credentials = await getCredentials();
       Alert.alert('AccessToken: ' + credentials.accessToken);
     } catch (e) {
@@ -20,11 +20,15 @@ const Home = () => {
 
   const onLogout = async () => {
     try {
-      await clearSession({customScheme: 'auth0.com.auth0samples'});
+      await clearSession();
     } catch (e) {
       console.log('Log out cancelled');
     }
   };
+
+  if (isLoading) {
+    return <View style={styles.container}><Text>Loading</Text></View>;
+  }
 
   return (
     <View style={styles.container}>

@@ -31,7 +31,7 @@ Open the `android/app/build.gradle` file and locate the following manifest place
 android {
     defaultConfig {
         manifestPlaceholders = [auth0Domain: "YOUR_AUTH0_DOMAIN",
-                                auth0Scheme: "${applicationId}"]
+                                auth0Scheme: "${applicationId}.auth0"]
     }
     ...
 }
@@ -43,7 +43,7 @@ Replace `YOUR_AUTH0_DOMAIN` with your Auth0 domain value. If you have `samples.a
 android {
     defaultConfig {
         manifestPlaceholders = [auth0Domain: "samples.auth0.com", 
-                                auth0Scheme: "${applicationId}"]
+                                auth0Scheme: "${applicationId}.auth0"]
     }
     ...
 }
@@ -60,8 +60,8 @@ The `applicationId` value will be auto-replaced at runtime with the package name
 5. In the **Allowed Callback URLs** field, paste in the text below and replace `YOUR_DOMAIN` with the **Domain** from above. These URLs are required for the authentication result to be redirected from the browser to the app:
 
 ```
-com.auth0samples://YOUR_DOMAIN/ios/com.auth0samples/callback,
-com.auth0samples://YOUR_DOMAIN/android/com.auth0samples/callback
+com.auth0samples.auth0://YOUR_DOMAIN/ios/com.auth0samples/callback,
+com.auth0samples.auth0://YOUR_DOMAIN/android/com.auth0samples/callback
 ```
 
 6. Add the same values to the **Allowed Logout URLs** field as well. These are required for the browser to redirect back to the app after the user logs out.

@@ -1,9 +1,0 @@
-version: 2
-updates:
-  - package-ecosystem: "npm" 
-    directory: "/00-Login" 
-    schedule:
-      interval: "daily"
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-major", "version-update:semver-patch"]

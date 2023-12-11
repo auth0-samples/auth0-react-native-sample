@@ -1,33 +1,79 @@
-# Auth0 React Native Sample
+# Auth0 React Native Samples - Login
 
-This is the sample code for the [Auth0 React Native Quickstart](https://auth0.com/docs/quickstart/native/react-native) using the [Auth0 React Native SDK](https://github.com/auth0/react-native-auth0/).
+The complete guide to getting started with [react-native-auth0](https://github.com/auth0/react-native-auth0) is our [React Native QuickStart](https://auth0.com/docs/quickstart/native/react-native/00-login).
 
-Please see [the sample applications](https://github.com/auth0-samples/auth0-react-native-sample/tree/master/00-Login) that demonstrate integrating the Auth0 React Native SDK into your application
+## 1. Install
 
-## What is Auth0?
+Clone the repository and install the dependencies with [Yarn](https://yarnpkg.com):
 
-Auth0 helps you to:
+```bash
+git clone git@github.com:auth0-samples/auth0-react-native-sample.git
+cd auth0-react-native-sample
+yarn install
+```
 
-* Add authentication with [multiple sources](https://auth0.com/docs/identityproviders), either social identity providers such as **Google, Facebook, Microsoft Account, LinkedIn, GitHub, Twitter, Box, Salesforce** (amongst others), or enterprise identity systems like **Windows Azure AD, Google Apps, Active Directory, ADFS, or any SAML Identity Provider**.
-* Add authentication through more traditional **[username/password databases](https://auth0.com/docs/connections/database/custom-db)**.
-* Add support for **[linking different user accounts](https://auth0.com/docs/users/user-account-linking)** with the same user.
-* Support for generating signed [JSON Web Tokens](https://auth0.com/docs/tokens/json-web-tokens) to call your APIs and **flow the user identity** securely.
-* Analytics of how, when, and where users are logging in.
-* Pull data from other sources and add it to the user profile through [JavaScript rules](https://auth0.com/docs/rules).
+### iOS Applications only
 
-## Create a Free Auth0 Account
+Change the directory into the `ios` folder and run the following command to install the SDK pod with [CocoaPods](https://cocoapods.org/):
 
-1. Go to [Auth0](https://auth0.com) and click **Sign Up**.
-2. Use Google, GitHub, or Microsoft Account to login.
+```bash
+cd ios
+pod install
+```
 
-## Issue Reporting
+You should see the `A0Auth0` pod being installed and linked to the sample app.
 
-If you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. The [Responsible Disclosure Program](https://auth0.com/responsible-disclosure-policy) details the procedure for disclosing security issues.
+### Android applications only
 
-## Author
+Open the `android/app/build.gradle` file and locate the following manifest placeholders:
 
-[Auth0](https://auth0.com)
+```groovy
+android {
+    defaultConfig {
+        manifestPlaceholders = [auth0Domain: "YOUR_AUTH0_DOMAIN",
+                                auth0Scheme: "${applicationId}.auth0"]
+    }
+    ...
+}
+```
 
-## License
+Replace `YOUR_AUTH0_DOMAIN` with your Auth0 domain value. If you have `samples.auth0.com` as your Auth0 domain you would have a configuration like the following:
 
-This project is licensed under the MIT license. See the [LICENSE](./LICENSE) file for more info.
+```groovy
+android {
+    defaultConfig {
+        manifestPlaceholders = [auth0Domain: "samples.auth0.com", 
+                                auth0Scheme: "${applicationId}.auth0"]
+    }
+    ...
+}
+```
+
+The `applicationId` value will be auto-replaced at runtime with the package name or ID of your application (e.g. `com.example.app`).
+
+## 2. Configure Auth0
+
+1. Copy the `app/auth0-configuration.js.example` in this sample to `app/auth0-configuration.js`.
+2. Open your [Applications in the Auth0 dashboard](https://manage.auth0.com/#/applications).
+3. Select your existing Application from the list or click **Create Application** at the top to create a new Application of type **Native**.
+4. On the **Settings** tab for the Application, copy the "Client ID" and "Domain" values and paste them into the `app/auth0-configuration.js` file created above.
+5. In the **Allowed Callback URLs** field, paste in the text below and replace `YOUR_DOMAIN` with the **Domain** from above. These URLs are required for the authentication result to be redirected from the browser to the app:
+
+```
+com.auth0samples.auth0://YOUR_DOMAIN/ios/com.auth0samples/callback,
+com.auth0samples.auth0://YOUR_DOMAIN/android/com.auth0samples/callback
+```
+
+6. Add the same values to the **Allowed Logout URLs** field as well. These are required for the browser to redirect back to the app after the user logs out.
+7. Scroll down and click **Save Changes**.
+
+## 3. Run The App
+
+Run your app on an emulator, simulator, or your own connected device.
+
+- To run the app on iOS run `yarn run ios`.
+- To run the app on Android run `yarn run android`.
+
+The first run may take a while to fully launch. Keep an eye out for confirmation windows and watch the terminal for output and results.
+
+**Note:** If you get an error about "No bundle URL present" try clicking reload in the app or running `yarn run ios` again. 

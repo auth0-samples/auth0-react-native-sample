@@ -2906,11 +2906,6 @@ cross-spawn@^7.0.2, cross-spawn@^7.0.3:
     shebang-command "^2.0.0"
     which "^2.0.1"
 
-crypto-js@^4.0.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/crypto-js/-/crypto-js-4.2.0.tgz#4d931639ecdfd12ff80e8186dba6af2c2e856631"
-  integrity sha512-KALDyEYgpY+Rlob/iriUtjV6d5Eq+Y191A5g4UqLAi8CyGP9N1+FdVbkc1SxKc2r4YAYqG8JzO2KGL+AizD70Q==
-
 csstype@^3.0.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.1.2.tgz#1d4bf9d572f11c14031f0436e1c10bc1f571f50b"
@@ -4634,11 +4629,6 @@ js-yaml@^4.1.0:
   dependencies:
     argparse "^2.0.1"
 
-jsbn@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-1.1.0.tgz#b01307cb29b618a1ed26ec79e911f803c4da0040"
-  integrity sha512-4bYVV3aAMtDTTu4+xsDYa6sy9GyJ69/amsu9sYF2zqjiEoZA5xJi3BrfX3uY+/IekIu7MwdObdbDWpoZdBv3/A==
-
 jsc-android@^250231.0.0:
   version "250231.0.0"
   resolved "https://registry.yarnpkg.com/jsc-android/-/jsc-android-250231.0.0.tgz#91720f8df382a108872fa4b3f558f33ba5e95262"
@@ -6183,14 +6173,12 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
-react-native-auth0@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-native-auth0/-/react-native-auth0-3.0.0.tgz#9e2295780e728bc91f857ccf6e16454ad676cc78"
-  integrity sha512-Udlz4LOoa0bK4gIZ8V23XJY3BPBpbrNzCM/ohbUNMTXkyDHqeQBq08OlqN99Cu/QdY2iZcdB9wyOdKzlQ86NyA==
+react-native-auth0@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-auth0/-/react-native-auth0-3.1.0.tgz#a0e2248b7258fca594b020a502b4e84d28466fc5"
+  integrity sha512-hd6ovyEEbxTXxq5Ml9HczPqtL4FIxzFdZC7SaXUmrNbRIX6BgUGiAAOR8NqCyg/fUqct67HlBzWa+SbnzK9Y+g==
   dependencies:
     base-64 "^0.1.0"
-    crypto-js "^4.0.0"
-    jsbn "^1.1.0"
     jwt-decode "^3.1.2"
     prettier-quick "^0.0.5"
     prop-types "^15.8.1"

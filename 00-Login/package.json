@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "react": "18.2.0",
-    "react-native": "0.72.1",
+    "react-native": "0.73.3",
     "react-native-auth0": "^3.0.0"
   },
   "devDependencies": {

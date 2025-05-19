@@ -1,6 +1,7 @@
 {
   "name": "00-login-expo",
   "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
     "start": "expo start --dev-client",
     "android": "expo run:android",
@@ -8,17 +9,15 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "expo": "~48.0.18",
-    "expo-splash-screen": "~0.18.2",
-    "expo-status-bar": "~1.4.0",
-    "react": "18.2.0",
-    "react-dom": "18.0.0",
-    "react-native": "0.71.8",
-    "react-native-auth0": "^3.0.0",
-    "react-native-web": "~0.18.7"
+    "expo": "~53.0.9",
+    "expo-dev-client": "~5.1.8",
+    "expo-status-bar": "~2.2.3",
+    "react": "19.0.0",
+    "react-native": "0.79.2",
+    "react-native-auth0": "^5.0.0-beta.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.20.0"
   },
   "private": true
 }

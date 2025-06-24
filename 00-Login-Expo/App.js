@@ -8,7 +8,10 @@ const Home = () => {
 
   const onLogin = async () => {
     try {
-      await authorize();
+     await authorize({
+        scope: "openid profile email",
+        redirectUrl: "myapp://callback",
+      });
       let credentials = await getCredentials();
       Alert.alert('AccessToken: ' + credentials.accessToken);
     } catch (e) {
